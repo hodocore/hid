@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "github.com/hodocore/hid/hid";
+
+
+// The greeting service definition.
+service HID {
+    // Sends a GenHID request
+    rpc GenHID (HIDGenRequest) returns (HIDGenReply) {}   
+  }
+  
+  // The request message containing the org's id in string.
+  message HIDGenRequest {
+    string orgid = 1;
+  }
+  
+  // The response message containing the hid which generated
+  message HIDGenReply {
+    string hid = 1;
+  }
